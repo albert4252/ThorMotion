@@ -1,0 +1,32 @@
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\mcapi32.dll
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\mcdlg32.dll
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\ThorMotor.exe.config
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\ThorMotor.exe
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\ThorMotor.pdb
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\Dgraph.dll
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\FileIO.dll
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\bin\Debug\OpenGLcontrol.dll
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotor.Form1.resources
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotor.Form2.resources
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotor.Form3D.resources
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotor.Properties.Resources.resources
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotors.csproj.GenerateResource.Cache
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotor.exe
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotor.pdb
+C:\Users\Valter\Desktop\ThorMotor_2017_27_Feb\ThorMotion\obj\x86\Debug\ThorMotors.csprojResolveAssemblyReference.cache
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\mcapi32.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\mcdlg32.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\ThorMotor.exe.config
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\ThorMotor.exe
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\ThorMotor.pdb
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\Dgraph.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\FileIO.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\OpenGLcontrol.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotors.csprojResolveAssemblyReference.cache
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.Form1.resources
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.Form2.resources
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.Form3D.resources
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.Properties.Resources.resources
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotors.csproj.GenerateResource.Cache
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.exe
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.pdb

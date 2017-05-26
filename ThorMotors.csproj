@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCCF4DFA-C423-481F-A2F7-6EA906267038}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThorMotor</RootNamespace>
+    <AssemblyName>ThorMotor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.3.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Hammer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dgraph, Version=2.0.0.30531, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Dgraph.dll</HintPath>
+    </Reference>
+    <Reference Include="FileIO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FileIO.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenGLcontrol, Version=1.2.6266.27037, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\OpenGLcontrol.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3D.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3D.Designer.cs">
+      <DependentUpon>Form3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3D.resx">
+      <DependentUpon>Form3D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B3DViev.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BCalibrateOnly.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BConvert1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BDelete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BDeleteAll.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BDXoptions.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BGraphOptions.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BInfo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlUpdate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMarkerOff.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMarkerOn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BNext.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BNormAllX.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BNormAllXY.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BNormAllY.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOpen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BPrev.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BPrint.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BPrintPreview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BPrintProperties.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BRedraw.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSave.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSaveDX.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BXNormall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BXYNormall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BYNormall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEDEmpty.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEDGreen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEDRed.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BStart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BStop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTools.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveDn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveUp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Hammer.ico" />
+    <Content Include="mcapi32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="mcdlg32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\NSavePlayground.ico" />
+    <None Include="Resources\NLoadPlayground.ico" />
+    <None Include="Resources\BHome.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
