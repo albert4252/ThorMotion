@@ -64,7 +64,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.bnHset = new System.Windows.Forms.Button();
+            //this.bnHset = new System.Windows.Forms.Button();
+            this.bnGetPos = new System.Windows.Forms.Button();
+            this.bnHome = new System.Windows.Forms.Button();
             this.bnHgoto = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbH10000 = new System.Windows.Forms.RadioButton();
@@ -77,7 +79,7 @@
             this.txHsetpos = new System.Windows.Forms.TextBox();
             this.txHposition = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            //this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txVpoints = new System.Windows.Forms.TextBox();
             this.bnVsetup = new System.Windows.Forms.Button();
@@ -101,7 +103,7 @@
             this.txVsetpos = new System.Windows.Forms.TextBox();
             this.txVposition = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            //this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -181,10 +183,10 @@
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            //this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            //this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -431,19 +433,21 @@
             // tcMotor
             // 
             this.tcMotor.Controls.Add(this.tabPage1);
-            this.tcMotor.Controls.Add(this.tabPage2);
-            this.tcMotor.Controls.Add(this.tabPage3);
+            //this.tcMotor.Controls.Add(this.tabPage2);
+            //this.tcMotor.Controls.Add(this.tabPage3);
             this.tcMotor.Controls.Add(this.tabPage4);
             this.tcMotor.Location = new System.Drawing.Point(3, 159);
             this.tcMotor.Name = "tcMotor";
             this.tcMotor.SelectedIndex = 0;
-            this.tcMotor.Size = new System.Drawing.Size(233, 272);
+            this.tcMotor.Size = new System.Drawing.Size(233, 320);
             this.tcMotor.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.bnHset);
+            //this.tabPage1.Controls.Add(this.bnHset);
+            this.tabPage1.Controls.Add(this.bnGetPos);
+            this.tabPage1.Controls.Add(this.bnHome);
             this.tabPage1.Controls.Add(this.bnHgoto);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.txHgotopos);
@@ -470,7 +474,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(2, 158);
+            this.groupBox2.Location = new System.Drawing.Point(2, 188);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(221, 88);
             this.groupBox2.TabIndex = 5;
@@ -573,7 +577,9 @@
             this.label2.Text = "From";
             // 
             // bnHset
-            // 
+            //
+
+            /* 
             this.bnHset.Location = new System.Drawing.Point(34, 23);
             this.bnHset.Name = "bnHset";
             this.bnHset.Size = new System.Drawing.Size(75, 23);
@@ -581,9 +587,29 @@
             this.bnHset.Text = "Set";
             this.bnHset.UseVisualStyleBackColor = true;
             this.bnHset.Click += new System.EventHandler(this.bnSet_Click);
+            */
             // 
             // bnHgoto
-            // 
+            //
+
+            this.bnGetPos.Location = new System.Drawing.Point(34, 23);
+            this.bnGetPos.Name = "bnGetPos";
+            this.bnGetPos.Size = new System.Drawing.Size(75, 23);
+            this.bnGetPos.TabIndex = 4;
+            this.bnGetPos.Text = "get current position";
+            this.bnGetPos.UseVisualStyleBackColor = true;
+            this.bnGetPos.Click += new System.EventHandler(this.bnGetPos_Click);
+
+            this.bnHome.Location = new System.Drawing.Point(34, 69);
+            this.bnHome.Name = "bnHome";
+            this.bnHome.Size = new System.Drawing.Size(75, 23);
+            this.bnHome.TabIndex = 4;
+            this.bnHome.Text = "Home";
+            this.bnHome.UseVisualStyleBackColor = true;
+            this.bnHome.Click += new System.EventHandler(this.bnHome_Click);
+
+
+
             this.bnHgoto.Location = new System.Drawing.Point(34, 46);
             this.bnHgoto.Name = "bnHgoto";
             this.bnHgoto.Size = new System.Drawing.Size(75, 23);
@@ -600,7 +626,7 @@
             this.groupBox1.Controls.Add(this.rbH1000);
             this.groupBox1.Controls.Add(this.rbH100);
             this.groupBox1.Controls.Add(this.rbH10);
-            this.groupBox1.Location = new System.Drawing.Point(2, 71);
+            this.groupBox1.Location = new System.Drawing.Point(2, 95);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(221, 85);
             this.groupBox1.TabIndex = 3;
@@ -697,14 +723,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 5);
+            this.label1.Location = new System.Drawing.Point(10, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Current position";
+            this.label1.Text = "Current position (mm)";
             // 
             // tabPage2
-            // 
+            //
+            
+            /* 
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.bnVset);
             this.tabPage2.Controls.Add(this.bnVgoto);
@@ -720,6 +748,9 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vertical";
             this.tabPage2.UseVisualStyleBackColor = true;
+            */
+
+
             // 
             // groupBox3
             // 
@@ -952,7 +983,8 @@
             this.label12.Text = "Current position";
             // 
             // tabPage3
-            // 
+            //
+            /* 
             this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.button10);
@@ -967,6 +999,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Diagonal";
             this.tabPage3.UseVisualStyleBackColor = true;
+            */
             // 
             // button8
             // 
@@ -1685,14 +1718,14 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            //this.tabPage2.ResumeLayout(false);
+            //this.tabPage2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            //this.tabPage3.ResumeLayout(false);
+            //this.tabPage3.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -1723,11 +1756,11 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabControl tcMotor;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        //private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripStatusLabel lbStatus;
-        private System.Windows.Forms.TabPage tabPage3;
+        //private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.StatusStrip stGraph;
         private System.Windows.Forms.ToolStripStatusLabel lbMarker;
         private System.Windows.Forms.ToolStripButton bnMarkerToggle;
@@ -1756,7 +1789,9 @@
         private System.Windows.Forms.TextBox txHposition;
         private System.Windows.Forms.Label label1;
         private Dgraph.DGraph sgMain;
-        private System.Windows.Forms.Button bnHset;
+        //private System.Windows.Forms.Button bnHset;
+        private System.Windows.Forms.Button bnGetPos;
+        private System.Windows.Forms.Button bnHome;
         private System.Windows.Forms.Button bnHgoto;
         private System.Windows.Forms.TextBox txHgotopos;
         private System.Windows.Forms.TextBox txHsetpos;

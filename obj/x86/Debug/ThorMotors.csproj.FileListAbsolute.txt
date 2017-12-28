@@ -30,3 +30,9 @@ C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\T
 C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotors.csproj.GenerateResource.Cache
 C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.exe
 C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\obj\x86\Debug\ThorMotor.pdb
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\Thorlabs.MotionControl.DeviceManagerCLI.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\Thorlabs.MotionControl.GenericMotorCLI.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\Thorlabs.MotionControl.TCube.DCServoCLI.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\Thorlabs.MotionControl.Tools.Common.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\Thorlabs.MotionControl.Tools.Logging.dll
+C:\Users\Albert\Documents\Visual Studio 2015\Projects\ThorMotion\bin\Debug\Thorlabs.MotionControl.Tools.WPF.dll

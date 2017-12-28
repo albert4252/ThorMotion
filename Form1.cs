@@ -10,6 +10,12 @@ using Tonu.Windows.Forms;
 using Dgraph;
 using Microsoft.Win32;
 
+using Thorlabs.MotionControl.DeviceManagerCLI;
+using Thorlabs.MotionControl.GenericMotorCLI.AdvancedMotor;
+using Thorlabs.MotionControl.GenericMotorCLI.Settings;
+using Thorlabs.MotionControl.TCube.DCServoCLI;
+
+
 namespace ThorMotor
 {
     public partial class Form1 : Form
@@ -28,6 +34,8 @@ namespace ThorMotor
         public Thor Th;                                                     // Thor motor board object
         public BKG Bkg = new BKG();                                         // Helper class for RasterScan 
         public Random rd = new Random((int)(DateTime.Now.Ticks / 100000L)); // For emulation rasterscan
+
+        public TDC001 tdc001;
         #endregion
         //
         #region Form related events
@@ -36,6 +44,7 @@ namespace ThorMotor
             noentrance = true;                                              // Form load sets size and calls DumpUpdate
             InitializeComponent();
             Th = new Thor();
+            tdc001 = new TDC001(); 
             SetupSystemMenu();
             noentrance = false;
         }
@@ -54,6 +63,8 @@ namespace ThorMotor
             lbStatus.Text = "Status: " + (emulate ? "Emulating" : "OK");
             bnMarkerToggle.Image = sgMain.MarkerOn ? Properties.Resources.BMarkerOn :
                                                         Properties.Resources.BMarkerOff;
+            txHposition.Text = tdc001.getPosition().ToString();
+
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -1037,7 +1048,7 @@ namespace ThorMotor
         }
         private void bnMotorUpDown_Click(object sender, EventArgs e)
         {
-            int step, motor, dir;
+            /*
             Button bn = sender as Button;
             if (bn == null) return;
             if (bn.Name.Contains("H")) motor = 0;
@@ -1065,7 +1076,24 @@ namespace ThorMotor
                 else if (rbD10000.Checked) step = 10000;
                 else step = 1000;
             }
-            MoveMotor(motor, step, dir);
+            MoveMotor(motor, step, dir);*/
+
+            decimal step;
+            int  dir;
+            if (rbH10.Checked) step = 0.001M;
+            else if (rbH100.Checked) step = 0.01M;
+            else if (rbH1000.Checked) step = 0.1M;
+            else if (rbH10000.Checked) step = 1;
+            else step = 1;
+
+            dir = bn.Name.Contains("u") ? 1 : 0;
+
+            if (dir == 1)
+            {
+                step *= -1;
+            }
+            tdc001.Move_Relative(step);
+            txHposition.Text = tdc001.getPosition().ToString();
         }
         private void bnSet_Click(object sender, EventArgs e)
         {
@@ -1105,22 +1133,46 @@ namespace ThorMotor
             }
             if (!emulate) Th.SetCurPos(npos, motor);
         }
+
+        private void bnGetPos_Click(object sender, EventArgs e)
+        {
+            Button bn = sender as Button;
+            if (bn == null) return;
+            txHposition.Text = tdc001.getPosition().ToString();
+        }
+
+        private void bnHome_Click(object sender, EventArgs e)
+        {
+            Button bn = sender as Button;
+            if (bn == null) return;
+
+            tdc001.Home_Method1();
+            txHposition.Text = tdc001.getPosition().ToString();
+        }
+
         private void bnGoto_Click(object sender, EventArgs e)
         {
-            int motor;
-            double npos = 0, cpos = 0;
+            //int motor;
+            //double npos = 0, cpos = 0;
             Button bn = sender as Button;
             if (bn == null) return;
             if (bn.Name.Contains("H"))
             {
+                /*
                 motor = 0;
                 if (emulate) txHposition.Text = txHgotopos.Text;
                 else
                 {
                     Th.GetCurPos(ref cpos, 0);
                     if (!double.TryParse(txHgotopos.Text, out npos)) npos = cpos;
-                }
+                }*/
+                
+
+                tdc001.Move_Method1(Decimal.Parse(txHgotopos.Text));
+                txHposition.Text = tdc001.getPosition().ToString();
+
             }
+            /*
             else if (bn.Name.Contains("V"))
             {
                 motor = 1;
@@ -1142,6 +1194,7 @@ namespace ThorMotor
                 }
             }
             if (!emulate) Th.GotoNewPos(npos, motor, false);
+            */
         }
         private void bnSetupAxis_Click(object sender, EventArgs e)
         {
@@ -1921,6 +1974,135 @@ namespace ThorMotor
                 }
             }
             #endregion
+        }
+
+        public class TDC001
+        {
+            // Ripped/Copy-pasted/bastardized from TDC001 sample program found in documentation
+            public bool homed { get; set; }
+            public TCubeDCServo device { get; set; }
+
+            public TDC001()
+            {
+                string serialNo = "83819702";
+
+                try
+                {
+                    // Tell the device manager to get the list of all devices connected to the computer
+                    DeviceManagerCLI.BuildDeviceList();
+                }
+                catch (Exception ex)
+                {
+                    // an error occurred - see ex for details
+                    Console.WriteLine("Exception raised by BuildDeviceList {0}", ex);
+                    Console.ReadKey();
+                    return;
+                }
+
+                // get available TCube DC Servos and check our serial number is correct
+                List<string> serialNumbers = DeviceManagerCLI.GetDeviceList(TCubeDCServo.DevicePrefix);
+                if (!serialNumbers.Contains(serialNo))
+                {
+                    // the requested serial number is not a TDC001 or is not connected
+                    Console.WriteLine("{0} is not a valid serial number", serialNo);
+                    Console.ReadKey();
+                    return;
+                }
+
+                // create the device
+                device = TCubeDCServo.CreateTCubeDCServo(serialNo);
+                if (device == null)
+                {
+                    // an error occured
+                    Console.WriteLine("{0} is not a TCubeDCServo", serialNo);
+                    Console.ReadKey();
+                    return;
+                }
+                // open a connection to the device.
+                try
+                {
+                    Console.WriteLine("Opening device {0}", serialNo);
+                    device.Connect(serialNo);
+                }
+                catch (Exception)
+                {
+                    // connection failed
+                    Console.WriteLine("Failed to open device {0}", serialNo);
+                    Console.ReadKey();
+                    return;
+                }
+                // wait for the device settings to initialize
+                if (!device.IsSettingsInitialized())
+                {
+                    try
+                    {
+                        device.WaitForSettingsInitialized(5000);
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Settings failed to initialize");
+                    }
+                }
+                // start the device polling
+                device.StartPolling(250);
+                // call GetMotorConfiguration on the device to initialize the DeviceUnitConverter object required for real world unit parameters
+                MotorConfiguration motorSettings = device.GetMotorConfiguration(serialNo);
+                DCMotorSettings currentDeviceSettings = device.MotorDeviceSettings as DCMotorSettings;
+
+                homed = device.Status.IsHomed;
+            }
+
+            public void Home_Method1()
+            {
+                try
+                {
+                    device.Home(60000);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Failed to home device");
+                    Console.ReadKey();
+                    return;
+                }
+                homed = device.Status.IsHomed;
+                Console.WriteLine("Device Homed");
+            }
+
+            public void Move_Method1(decimal position)
+            {
+                try
+                {
+                    Console.WriteLine("Moving Device to {0}", position);
+                    device.MoveTo(position, 60000);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Failed to move to position");
+                    //Console.ReadKey();
+                    return;
+                }
+                Console.WriteLine("Device Moved");
+            }
+
+            public void Move_Relative(decimal deltaPos)
+            {
+                try
+                {
+                    device.MoveTo(device.Position - deltaPos, 60000);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Failed to move to position");
+                    return;
+                }
+            }
+
+            public Decimal getPosition()
+            {
+                return device.Position;
+            }
+
+
         }
 
 
